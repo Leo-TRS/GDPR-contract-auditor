@@ -10,7 +10,9 @@
 ![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![RAG](https://img.shields.io/badge/IA-RAG-1E3A5F?style=flat-square)
+![Rust](https://img.shields.io/badge/Rust-WebAssembly-000000?style=flat-square&logo=rust&logoColor=white)
+![RAG](https://img.shields.io/badge/IA-RAG%20local-1E3A5F?style=flat-square)
+![Privacy by design](https://img.shields.io/badge/Privacy%20by%20design-100%25%20local-1E3A5F?style=flat-square)
 ![Sources](https://img.shields.io/badge/Sources-RGPD%20%C2%B7%20Code%20civil-1E3A5F?style=flat-square)
 ![Statut](https://img.shields.io/badge/Statut-En%20d%C3%A9veloppement-4A6FA5?style=flat-square)
 
@@ -19,6 +21,7 @@
 [Analyse](#analyse) ·
 [Sources juridiques](#sources-juridiques) ·
 [Interface](#interface) ·
+[Privacy by design](#privacy-by-design) ·
 [Feuille de route](#feuille-de-route)
 
 </div>
@@ -117,12 +120,34 @@ Une interface web en **HTML, CSS et JavaScript** permettra de :
 
 ---
 
+## Privacy by design
+
+Un contrat de sous-traitance contient des informations confidentielles : parties, prix, mesures de sécurité, sous-traitants. L'objectif est donc que **tout tourne en local** et que **le contrat ne quitte jamais la machine de l'utilisateur**, conformément au principe de protection des données dès la conception (art. 25 RGPD).
+
+- **Lecture du contrat dans le navigateur** : l'extraction du texte et le découpage en clauses sont réalisés par une brique **Rust compilée en WebAssembly**, exécutée directement dans le navigateur.
+- **IA locale** : le modèle de langage et le modèle d'embeddings du RAG tournent sur la machine de l'utilisateur, sans appel à une API externe.
+- **Aucun envoi à un tiers** : ni le contrat ni le rapport ne sont transmis ou conservés sur un serveur.
+
+```mermaid
+flowchart LR
+    subgraph Machine de l'utilisateur
+        A[Contrat PDF] --> B[Rust / WebAssembly<br>extraction et découpage]
+        B --> C[RAG local]
+        E[(RGPD + Code civil)] --> C
+        C --> D[IA locale]
+        D --> F[Rapport]
+    end
+```
+
+---
+
 ## Feuille de route
 
 - [ ] Constituer le corpus : RGPD et Code civil
-- [ ] Extraire le texte du contrat et le découper en clauses
+- [ ] Extraire le texte du contrat et le découper en clauses (Rust compilé en WebAssembly)
 - [ ] Formaliser la liste de contrôle
-- [ ] Rechercher les passages pertinents et confronter chaque clause (RAG)
+- [ ] Choisir et intégrer un modèle d'IA local : dans le navigateur (WebGPU) ou via un serveur local
+- [ ] Rechercher les passages pertinents et confronter chaque clause (RAG local)
 - [ ] Générer le rapport d'analyse
 - [ ] Interface web (HTML, CSS, JavaScript) : dépôt du contrat et affichage du rapport
 
