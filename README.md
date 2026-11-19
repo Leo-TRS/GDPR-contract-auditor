@@ -7,6 +7,9 @@
 **Revue de contrats de sous-traitance de données au regard du RGPD, propulsée par l'IA**
 
 ![Python](https://img.shields.io/badge/Python-3.11+-1D4ED8?style=flat-square&logo=python&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 ![RAG](https://img.shields.io/badge/IA-RAG-1E3A5F?style=flat-square)
 ![Sources](https://img.shields.io/badge/Sources-RGPD%20%C2%B7%20Code%20civil-1E3A5F?style=flat-square)
 ![Statut](https://img.shields.io/badge/Statut-En%20d%C3%A9veloppement-4A6FA5?style=flat-square)
@@ -15,6 +18,7 @@
 [Liste de contrôle](#liste-de-contrôle) ·
 [Analyse](#analyse) ·
 [Sources juridiques](#sources-juridiques) ·
+[Interface](#interface) ·
 [Feuille de route](#feuille-de-route)
 
 </div>
@@ -103,6 +107,16 @@ flowchart LR
 
 ---
 
+## Interface
+
+Une interface web en **HTML, CSS et JavaScript** permettra de :
+
+- déposer le contrat à analyser ;
+- suivre l'avancement de l'analyse ;
+- consulter le rapport, élément par élément, avec les statuts ✅ ⚠️ ❌ et les articles cités.
+
+---
+
 ## Feuille de route
 
 - [ ] Constituer le corpus : RGPD et Code civil
@@ -110,7 +124,7 @@ flowchart LR
 - [ ] Formaliser la liste de contrôle
 - [ ] Rechercher les passages pertinents et confronter chaque clause (RAG)
 - [ ] Générer le rapport d'analyse
-- [ ] Interface de dépôt du contrat et d'affichage du rapport
+- [ ] Interface web (HTML, CSS, JavaScript) : dépôt du contrat et affichage du rapport
 
 ---
 
