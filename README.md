@@ -130,8 +130,8 @@ Un contrat de sous-traitance contient des informations confidentielles : parties
 
 ```mermaid
 flowchart LR
-    subgraph Machine de l'utilisateur
-        A[Contrat PDF] --> B[Rust / WebAssembly<br>extraction et découpage]
+    subgraph local["Machine de l'utilisateur"]
+        A[Contrat PDF] --> B["Rust / WebAssembly<br>extraction et découpage"]
         B --> C[RAG local]
         E[(RGPD + Code civil)] --> C
         C --> D[IA locale]
