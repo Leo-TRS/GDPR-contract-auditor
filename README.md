@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/logo.svg" alt="Logo GDPR Contract Auditor" width="140">
+<img src="assets/logo_DPONews.png" alt="Logo GDPR Contract Auditor" width="140">
 
 # GDPR Contract Auditor
 
